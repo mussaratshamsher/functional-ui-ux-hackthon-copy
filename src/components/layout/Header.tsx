@@ -7,7 +7,9 @@ import {
 } from "@/components/ui/sheet";  
 import { Search, ShoppingBag, User } from 'lucide-react';  
 import Link from 'next/link';  
-import { useState } from 'react';    
+import { useState } from 'react';  
+import ModeToggle from "../theme/ModeToggle";
+ 
 
 export default function Header() {  
     const [isOpen, setIsOpen] = useState(false); 
@@ -52,8 +54,9 @@ export default function Header() {
 
                 <div className="flex flex-row md:gap-3 md:mr-20">  
                     <Link href='/search'><Search /></Link> 
-                    <Link href="/auth"><User /></Link>    
-                    <Link href="/cart"> <ShoppingBag /></Link>    
+                    <Link href="/auth"><User /></Link> 
+                    <Link href="/cart"> <ShoppingBag /></Link> 
+                       <ModeToggle/>
                     
                 </div>  
 

@@ -23,7 +23,7 @@ interface Product {
     reviews: string;
 }  
  
- const fetchProduct = async (id: string): Promise<Product | null> => {  
+    const fetchProduct = async (id: string): Promise<Product | null> => {  
     const query = `*[_type == "product" && id == $id][0]{  
         title, name, id, image, description, price , details , yellowstars, graystars, 
         reviews, tags, category
@@ -32,7 +32,7 @@ interface Product {
     return await client.fetch(query, { id });  
 };  
       //main function 
-    const ProductDetail = async ({ params }: { params: { id: string } }) => {  
+     const ProductDetail = async ({ params }: { params: { id: string } }) => {  
      const product = await fetchProduct(params.id);  
 
     if (!product) {  
